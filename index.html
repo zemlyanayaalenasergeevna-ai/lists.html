@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lucky Card RNG</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- 🎬 INTRO -->
+<div id="introScreen">
+  <h1 class="logo">🎁 Lucky Card RNG</h1>
+  <p class="press">Press any key or click to start</p>
+</div>
+
+<!-- 🎮 START MENU -->
+<div id="startScreen">
+  <h1>🎁 Lucky Card RNG</h1>
+  <button onclick="startNew()">▶️ Start Game</button>
+  <button onclick="continueGame()">🔄 Continue</button>
+  <button onclick="resetGame()">🗑 Reset</button>
+</div>
+
+<!-- 🎮 GAME UI -->
+<div id="gameUI">
+
+  <h1>🎁 Lucky Card RNG</h1>
+
+  <div class="panel">
+    <h2 id="balance">Balance: $0</h2>
+    <p id="stats">Rebirths: 0 | Multiplier: x1</p>
+  </div>
+
+  <div class="panel">
+    <h3>💳 Gift Cards</h3>
+
+    <button onclick="buyGiftCard(0)">Basic ($25)</button>
+    <button onclick="buyGiftCard(1)">Advanced ($100)</button>
+    <button onclick="buyGiftCard(2)">Premium ($500)</button>
+    <button onclick="buyGiftCard(3)">Legendary ($2000)</button>
+
+    <p id="giftResult" class="result"></p>
+  </div>
+
+  <div class="panel">
+    <button class="rebirth-btn" onclick="rebirth()">🔄 Rebirth</button>
+    <p id="rebirthInfo" class="result"></p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
