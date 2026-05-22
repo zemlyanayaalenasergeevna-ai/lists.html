@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists Provider</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/lists.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Working with Lists (Provider Version)</h1>
+    <p>Ми вивчаємо роботу зі списками</p>
+
+    <div id="app"></div>
+
+    <!-- JS Provider -->
+    <script type="module">
+        const listProvider = () => {
+            return {
+                languages: [
+                    "JavaScript",
+                    "Python",
+                    "PHP",
+                    "C#",
+                    "Java",
+                    "C++",
+                    "SQL",
+                    "TypeScript",
+                    "Go",
+                    "Kotlin"
+                ],
+                descriptions: {
+                    JavaScript: "A programming language for web development.",
+                    Python: "A high-level programming language.",
+                    PHP: "A server-side scripting language.",
+                    "C#": "A programming language developed by Microsoft.",
+                    Java: "A widely-used programming language.",
+                    "C++": "A general-purpose programming language.",
+                    SQL: "A language for managing databases.",
+                    TypeScript: "A superset of JavaScript that adds static types.",
+                    Go: "A programming language developed by Google.",
+                    Kotlin: "A statically-typed programming language."
+                }
+            };
+        };
+
+        const data = listProvider();
+        const app = document.getElementById("app");
+
+        // UL
+        const ul = document.createElement("ul");
+        data.languages.forEach(lang => {
+            const li = document.createElement("li");
+            li.textContent = lang;
+            ul.appendChild(li);
+        });
+
+        app.appendChild(document.createElement("h2")).textContent = "Unordered List";
+        app.appendChild(ul);
+
+        // OL
+        const ol = document.createElement("ol");
+        data.languages.forEach(lang => {
+            const li = document.createElement("li");
+            li.textContent = lang;
+            ol.appendChild(li);
+        });
+
+        app.appendChild(document.createElement("h2")).textContent = "Ordered List";
+        app.appendChild(ol);
+
+        // DL
+        const dl = document.createElement("dl");
+        data.languages.forEach(lang => {
+            const dt = document.createElement("dt");
+            dt.textContent = lang;
+
+            const dd = document.createElement("dd");
+            dd.textContent = data.descriptions[lang];
+
+            dl.appendChild(dt);
+            dl.appendChild(dd);
+        });
+
+        app.appendChild(document.createElement("h2")).textContent = "Description List";
+        app.appendChild(dl);
+    </script>
+
+</body>
+</html>
